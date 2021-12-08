@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="../JS/callbackLib.js"></script>
+    <script>
+        window.onload = () => {
+            try{
+                Je.AddGenericAction("#texto","blur", (e) => {alert("saiu do elemento")});
+                Je.modificaCSS("footer", e => {e.background = "black"});
+                //Je.modificaCSS("footer","background: blue");
+                //modificaCSS("footer", {background: "red", color:"white"});
+            }catch(error){
+                const containerErro = Je.get(".mensagemDeErro");
+                containerErro.innerHTML = error;
+                containerErro.style.fontSize = "20px";
+            }
+    };
+    </script>
+    <title>CallbackLib</title>
+</head>
+<body style="height: 800px;">
+    <footer class="mensagemDeErro">aaa</footer>
+    <input type="text" id="texto">
+    
+</body>
+</html>

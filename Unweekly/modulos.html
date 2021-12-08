@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Modulos</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+        main{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            height: 80vh;
+            width: 60vw;
+           
+        }
+        .inputs{
+            height: 90%;
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            
+        }
+        .imagem{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-evenly;
+            background-color: rgb(214, 173, 70);
+            height: 100%;
+            width: 40%;
+            cursor: pointer;
+            word-wrap: break-word
+           
+        }
+        label {
+            width: 100%;
+            height: 20%;
+        }
+        input {
+            width: 90%;
+            height: 40%;
+            background-color: rgb(214, 173, 70);
+            border: 0;
+        }
+        .cadastro{
+            width: 80%;
+            background-color: black;
+            color: rgb(214, 173, 70);
+            font-size: 100%;
+            height: 20%;
+            cursor: pointer;
+        }
+        .file{
+            cursor: pointer;
+        }
+        .imagem div{
+            border: 10px;
+            height: 30%;    
+            overflow-y: scroll;
+            width: 90%;
+            word-wrap: break-word;
+            
+            
+        }
+        
+*::-webkit-scrollbar {
+ width: 10px;
+ direction:ltr
+}
+
+/* Track */
+*::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+*::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+*::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+        
+    </style>
+</head>
+<body>
+    <main>
+        <nav class="inputs">
+            <h2>Cadastro de Usuário</h2>
+            <label>Nome do Usuário:
+                <input type="text" class="Nome">
+            </label>
+            <label>Foto:<br>
+                <input type="text" class="file">
+            </label>
+            <label>Descrição:<br>
+                <input type="text" class="descricao">
+            </label>
+            <input type="submit" value="Cadastrar" class="cadastro">
+        </nav>
+        <div class="imagem">
+        </div>
+    </main>
+    </body>
+    <script defer type="module" src="../JS/modulo.js">
+</script>
+</html>

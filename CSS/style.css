@@ -1,0 +1,23 @@
+body, p{
+    font-family: Arial;
+    font-size: 1.2rem;
+    margin: 0px;
+    padding: auto;
+}
+
+h1{text-align: center;}
+.grid{
+    display: grid;
+    background-color: cadetblue;
+    padding: 10px;
+    grid-template-columns: auto auto auto auto auto auto auto auto;
+}
+.item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    width: auto;
+    height: 30px;
+  }

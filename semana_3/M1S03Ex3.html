@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculadora</title>
+</head>
+<body>
+    <input type="text" class="numero">
+    <input type="submit" value="+" class="plus">
+    <input type="submit" value="-" class="minus">
+    <input type="submit" value="*" class="multiply">
+    <input type="submit" value="/" class="divide">
+    <br>
+    <p class="resultado"></p>
+</body>
+<script>
+const numero = document.querySelector('.numero');
+const plus = document.querySelector('.plus');
+const minus = document.querySelector('.minus');
+const multiply = document.querySelector('.multiply');
+const divide = document.querySelector('.divide');
+const resultado = document.querySelector('.resultado');
+
+const infos = {};
+
+function fazConta(){
+    if(infos.operacao == '+'){resultado.innerHTML = "= " + (infos.numero1 + infos.numero2);} 
+    if(infos.operacao == '-'){resultado.innerHTML =  "= " + (infos.numero1 - infos.numero2);}
+    if(infos.operacao == '*'){resultado.innerHTML = "= "  + (infos.numero1 * infos.numero2);}    
+    if(infos.operacao == '/'){resultado.innerHTML =  "= " + (infos.numero1 / infos.numero2);}           
+}
+
+function soma(){   
+    let number = parseFloat(numero.value);
+    infos.numero1 = number;
+    infos.operacao = '+'; 
+    numero.value = "";
+    console.log(infos);
+}
+function diminui(){   
+    let number = parseFloat(numero.value);
+    infos.numero1 = number;
+    infos.operacao = '-'; 
+    numero.value = "";
+    console.log(infos);
+}
+function multiplica(){   
+    let number = parseFloat(numero.value);
+    infos.numero1 = number;
+    infos.operacao = '*'; 
+    numero.value = "";
+    console.log(infos);
+}
+function divisao(){   
+    let number = parseFloat(numero.value);
+    infos.numero1 = number;
+    infos.operacao = '/'; 
+    numero.value = "";
+    console.log(infos);
+}
+
+plus.addEventListener('click',soma);
+minus.addEventListener('click',diminui);
+multiply.addEventListener('click',multiplica);
+divide.addEventListener('click',divisao);
+resultado.addEventListener('click',()=>{
+    resultado.innerHTML =  "= " 
+})
+numero.addEventListener("blur",()=> {
+    let number = parseFloat(numero.value);
+    infos.numero2 = number;
+    let result = infos.numero1 
+    console.log(infos);
+    if(infos.numero1 !== undefined && infos.operacao !== undefined ){
+    fazConta();}
+});
+
+</script>
+</html>

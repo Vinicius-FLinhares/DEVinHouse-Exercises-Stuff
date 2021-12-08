@@ -1,0 +1,171 @@
+<html style="background-color: lightgreen;">
+
+    <p>
+        <canvas id="cnv" width="1200" height="350"
+       style="background-color: white; border:1px solid black " > 
+        </canvas>
+        </p>
+
+<script>
+
+function população(){
+    //essa função pega os pontos anteriores e faz um acrescimo, a variação temporal foi posta a mão mas condiz com o tempo
+    x = x + (a*x - b*x*y)/10 ;
+    y = y + (c*x*y - d*y)/10 ;
+    //curva de confuguração
+    ctx.beginPath();
+    ctx.arc(x,y,0.5*rpix,0,2*Math.PI,0);
+    ctx.fill();
+    //linha do tempo
+    ctx.beginPath();
+    ctx.arc(t/100,-6,0.5*rpix,0,2*Math.PI,0);
+    ctx.strokeStyle ="red";
+    ctx.stroke();
+    //só melhora a apresentação no text
+    var X = (x).toFixed(1);
+    var Y = (y).toFixed(1);
+    var time = (t).toFixed(1);
+    //plota valor ajustado pra tempo e configurações
+    document.getElementById("xt").value = X;
+    document.getElementById("yt").value = Y;
+    document.getElementById("t").value = time/100;
+    t = t + 1 ;
+    if(x<0 , y<0 , x>1000 , y> 1000)clearInterval(int);
+}
+
+function simula(){
+    t= 0; 
+    //usar parseFloat int aproxima
+    x = parseInt(document.getElementById("xi").value);
+    y = parseInt(document.getElementById("yi").value);
+    int = setInterval("população()", dt ); 
+}
+
+</script>
+<script>//variaveis dinâmicas
+var dt = 10;
+var t = null;
+var x = null;
+var y = null;
+var int = null;
+//coeficientes
+var a = 0.1;
+var b = 0.002;
+var c = 0.0025;
+var d = 0.2;
+//Confg do canvas, transf
+var cnv = document.getElementById("cnv");
+var ctx = cnv.getContext("2d");
+var cW = cnv.width, cH = cnv.height;
+var xmin = -100, xmax = +100;
+var ymin = -100, ymax = +100;
+ctx.setTransform(2*cW/(1200),0,0,-2*cH/(350),20,cH-15);
+ctx.lineWidth = 0.1;
+var rpix = 0.5;
+//gráfico
+</script>
+<script>//linhas graficas
+ctx.beginPath();
+for(i=0;i<1200;i++){
+ctx.moveTo(i*10,0);
+ctx.lineTo(i*10,1200);
+ctx.moveTo(0.7,i*10 + 0.7);
+ctx.lineTo(1200,i*10);
+}
+ctx.stroke();
+</script>
+<script>//números do gráfico
+ctx.save();
+ctx.font = '5pt Arial';
+ctx.translate(-5,-5);
+ctx.scale(1,-1);
+var rText = '0';
+ctx.fillText(rText , 0, 0);
+ctx.restore();
+
+ctx.save();
+ctx.font = '5pt Arial';
+ctx.translate(47,-5);
+ctx.scale(1,-1);
+var rText = '50';
+ctx.fillText(rText , 0, 0);
+ctx.restore();
+
+ctx.save();
+ctx.font = '5pt Arial';
+ctx.translate(95,-5);
+ctx.scale(1,-1);
+var rText = '100';
+ctx.fillText(rText , 0, 0);
+ctx.restore();
+
+ctx.save();
+ctx.font = '5pt Arial';
+ctx.translate(195,-5);
+ctx.scale(1,-1);
+var rText = '200';
+ctx.fillText(rText , 0, 0);
+ctx.restore();
+
+ctx.save();
+ctx.font = '5pt Arial';
+ctx.translate(295,-5);
+ctx.scale(1,-1);
+var rText = '300';
+ctx.fillText(rText , 0, 0);
+ctx.restore();
+
+ctx.save();
+ctx.font = '5pt Arial';
+ctx.translate(395,-5);
+ctx.scale(1,-1);
+var rText = '400';
+ctx.fillText(rText , 0, 0);
+ctx.restore();
+
+ctx.save();
+ctx.font = '5pt Arial';
+ctx.translate(495,-5);
+ctx.scale(1,-1);
+var rText = '500';
+ctx.fillText(rText , 0, 0);
+ctx.restore();
+
+ //números verticais
+
+ctx.save();
+ctx.font = '5pt Arial';
+ctx.translate(-10,47);
+ctx.scale(1,-1);
+var rText = '50';
+ctx.fillText(rText , 0, 0);
+ctx.restore();
+
+ctx.save();
+ctx.font = '5pt Arial';
+ctx.translate(-11,97);
+ctx.scale(1,-1);
+var rText = '100';
+ctx.fillText(rText , 0, 0);
+ctx.restore();
+
+ctx.save();
+ctx.font = '5pt Arial';
+ctx.translate(-11,147);
+ctx.scale(1,-1);
+var rText = '150';
+ctx.fillText(rText , 0, 0);
+ctx.restore();
+
+</script>
+<p>
+<img src="https://static.vecteezy.com/system/resources/thumbnails/000/546/465/small/rabbit_026.jpg" width="50" height="50">
+x=presas iniciais: <input type="text" id="xi" size="1" value="100" > elementos;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; presas(t) :<input type="text" id="xt" size="10" value="" > ;<br><br>
+<img src="https://thumbs.dreamstime.com/b/gray-wolf-cartoon-wolf-grey-nature-character-gray-wolf-cartoon-wolf-grey-nature-character-vector-111573781.jpg" width="50" height="50">
+y=predadores iniciais: <input type="text" id="yi" size="1" value="50" > elementos ;&nbsp;&emsp;&emsp;&emsp;&emsp;predadores(t) :<input type="text" id="yt" size="10" value="" > ;                     
+<br><br>
+ t : <input type="text" id="t" size="5" value="" > &nbsp;segundos;<br><br>
+ <input type="button" id="start" value="Start" onClick="simula()">
+ <input type="button" id="acrescimo" value="mamae"> 
+</p>
+</html>

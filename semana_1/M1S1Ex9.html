@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9-Loja estilizado</title>
+    <style type="text/css">
+    body{
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;   
+    }
+    @media (min-width: 1000px) {body{background-color: green;} body,article,footer{width: 99%;}}
+    @media (min-width: 800px) and (max-width: 999px) {body{background-color: rgb(6, 165, 6);}body,article,footer{width: 70%;}}
+    @media (min-width: 600px) and (max-width: 799px) {body{background-color: rgb(3, 179, 3);}body,article,footer{width: 50%;}}
+    @media (max-width: 599px) {body{background-color: rgb(5, 201, 5);}}
+    article{
+        height: 200px;
+        display: flex; justify-content: center; align-items: center;
+        text-align: center; border: 1px solid black; border-radius: 10px;   }
+    header{
+        border: black solid 1px;
+    }
+    nav{border-top: solid 1px black;
+         display: flex; 
+         justify-content: center;
+         height: 50px;
+         align-items: center;
+        }
+    h1{text-align: center;}
+    header,article,footer{background-color: white;}
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Loja</h1>
+        <nav>
+            Carros - Casas - Perfumes
+        </nav>
+    </header>
+
+    <article>
+        <div>Publicidade</div>
+    </article>
+        
+    <footer>
+        <h2>Heading</h2>
+        <div>Lorem impsorum etc etc...</div>
+    </footer>
+
+</body>
+</html>

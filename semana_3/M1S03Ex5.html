@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lampada</title>
+    <style>
+        button{
+            width: 20vw;
+            margin-top: 10vh;
+        }
+        img{
+            height: 50vh;
+            width: 40vw;
+        }
+        body{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <img src="../../img/luz-apagada.png" alt="">
+    <button class="interruptor">On/Off</button>
+</body>
+<script>
+    const botao = document.querySelector('.interruptor');
+    const img = document.querySelector('img');
+    let status = false;
+
+    function ligadesliga(){
+        if(!status){
+            img.src = "../../img/luz-acesa.png";
+            return status = true;
+        }
+        if(status){
+            img.src = "../../img/luz-apagada.png";
+            return status = false;
+        } 
+    }
+
+    botao.addEventListener('click',ligadesliga);
+</script>
+</html>

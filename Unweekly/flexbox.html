@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/1234icon.png">
+    
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        nav{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            border-bottom: black solid 2px;
+            height: 10vh;
+            background-color: black;
+            color: white;
+        }
+        #enviar{
+            height: 50%;
+            border: white 1px solid;
+            background-color: black;
+            color: white;
+        }
+        #color{
+            border: white 1px solid;
+            background-color: black;
+            color: white;
+        }   
+        #reverse{
+            border: white 1px solid;
+            background-color: black;
+            color: white;
+        }  
+        #select{
+            border: white 1px solid;
+            background-color: black;
+            color: white;
+        }
+        div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 25vh;
+            width: 25vh;
+            border: solid black 1px;
+            background-color: tomato;
+            font-size: 10vh;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <input type="submit" id="enviar" value="Add Item">
+        <input type="submit" id="reverse" value="Inverte Wrap">
+        <label>
+            <b>Troca de Cor: </b>
+            <input type="color" id="color" >
+        </label>
+        <label>
+            <b>Justify-content:</b>
+            <select id="select">
+                <option>flex-start</option>
+                <option>flex-end</option>
+                <option>center</option>
+                <option>space-between</option>
+                <option>space-around</option>
+                <option>space-evenly</option>
+            </select>
+        </label>
+    </nav>
+    <main class="main" style="margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    color: white;
+    background-color: white;">
+
+    </main>
+    
+</body>
+<script src="../JS/flexbox.js"></script>
+</html>

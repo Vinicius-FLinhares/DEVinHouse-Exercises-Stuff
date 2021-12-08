@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M1S02Ex8</title>
+</head>
+<body>
+    
+</body>
+<script>
+let textos = ["animal","carro","humano","predio","cadeira","objeto"];
+const body = document.querySelector('body');
+window.onload = ordena;
+
+function ordena(){
+    let array = textos.sort((a,b)=> b.length-a.length );
+    array.forEach((item)=>{
+        body.innerText += item + " , ";
+    });
+}
+
+
+</script>
+</html>

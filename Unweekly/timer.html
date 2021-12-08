@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../../img/favicon.ico">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: rgb(171, 111, 226);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family:Arial, Helvetica, sans-serif ;
+        }
+        main{
+            height: 70vh;
+            width: 60vw;
+            background-color: rgb(29, 29, 29);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        div{
+            color: white;
+        }
+        .relogio{
+            color: yellow;
+            width: 80%;
+            height: 20%;
+            border: yellow solid 1px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            font-size: 10vh;
+            
+        }
+        .timeOptions{
+            width: 80%;
+            height: 15%;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            align-items: center;
+           
+        }
+        .timeOptions div{
+            border: yellow 1px solid;
+            color: yellow;
+            width: 35%;
+            height: 65%;
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: row;
+            align-items: center;
+            cursor: pointer;
+        }
+        .comandos{
+            width: 80%;
+            height: 15%;
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: row;
+            align-items: center;
+        }
+        .comandos div {
+            width: 45%;
+            height: 85%;
+            border: yellow 1px solid;
+            color: yellow;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: row;
+            align-items: center;
+            cursor: pointer;
+            font-size: 5vh;
+        }
+        .newtimeoptions{
+            font-size: 6vh;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <div class="relogio">00:15</div>
+        <div class="timeOptions">
+            <div class="quinzeseg">15 seg</div>
+            <div class="trintaseg">30 seg</div>
+            <div class="onemin">1 min</div>
+            <div class="newtimeoptions">+</div>
+        </div>
+        <div class="comandos">
+            <div class="go">Start</div>
+            <div class="para">Stop</div>
+        </div>
+    </main>
+</body>
+<script src="../../JS/timer.js"></script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme</title>
+    <style>
+        body{
+            display: flex;
+        }
+        footer {
+            text-align: center;
+        }
+        footer img {
+            width: 100%;
+            height: auto;
+        }
+        main {
+            width: 35vw;
+            height: 50vh;
+            border: solid black 1px;
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        main div,button {
+            width: 30vw;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div>
+            <label>Top: </label><input type="text" id="superior">
+        </div>
+        <div>
+            <label>Bottom: </label><input type="text" id="inferior">
+        </div>
+        <div>
+            <b>Meme 1</b><input type="radio" name="qualmeme" value="Afraid-To-Ask-Andy"><br>
+            <b>Meme 2</b><input type="radio" name="qualmeme" value="Ancient-Aliens">
+        </div>
+        <button id="gerador" >Gerar o Meme</button>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+<script src="../JS/meme.js"></script>
+</html>

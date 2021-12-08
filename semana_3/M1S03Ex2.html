@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M1S03Ex1</title>
+</head>
+<body>
+    <input type="text" placeholder="número" class="numero">
+    <input type="submit" value="Enviar" class="botao">
+</body>
+<script>
+const text = document.querySelector(".numero");
+const botao = document.querySelector(".botao");
+let numero;
+
+function testaParidade(){
+    numero = parseFloat(text.value);
+    let status;
+
+    if(isNaN(numero)){ return alert('digite um número')}
+    if(numero % 2 == 0){status = true}
+    if(numero % 2 !== 0){status = false}
+    
+
+    if(status){alert('é par')}
+    if(!status){alert('não é par')}
+    text.value = ""
+}
+
+
+botao.addEventListener('click',testaParidade);
+
+
+</script>
+</html>

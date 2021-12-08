@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M1S02Ex10</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const body = document.querySelector('body');
+    let palavra;
+    let array = [];
+   
+    while (palavra !== "parar"){
+     palavra = window.prompt("digite uma palavra, ou 'parar' para parar.");
+     array.push(palavra);
+    }
+    array.splice(array.length-1,1)
+    array.sort((a,b)=>a.length-b.length);
+    array.forEach((item)=> body.innerText += item +" , ");
+</script>
+</html>

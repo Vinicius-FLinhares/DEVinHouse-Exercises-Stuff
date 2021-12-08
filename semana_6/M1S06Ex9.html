@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-Game</title>
+    <script defer src="../../JS/M1S06Ex9.js "></script>
+    <style>
+        body{
+            display: flex;
+            flex-direction: row;
+            padding: 0; margin: 0;
+        }
+        #cenario{
+            width: 80vw;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        #circuloPrincipal{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 400px;
+            height: 400px;
+            background-color: blue;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        #circuloMaximo{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: solid black 5px;
+            border-radius: 50%;
+            width: 82vh;
+            height: 82vh;
+        }
+        #points{
+            text-align: center;
+            color: white;
+            background: black;
+            width: 20vw;
+            height: 100vh;
+        }
+        .tempo{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20%;  
+        }
+        .tempo h1 {
+            position:absolute;
+            left: 14vw;
+        }
+        .pontos{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20%;  
+        }
+        #circuloMinimo{
+            background-color: black;
+            border-radius: 50%;
+            width: 10vh;
+            height: 10vh;
+        }
+    </style>
+</head>
+<body>
+    <footer id="points">
+        <h2>Points</h2>
+        <div class="tempo">
+            <label>Tempos:</label><h1 id="timer"></h1>
+        </div>
+        <div class="pontos">
+            <label>Pontos:</label><h1 id="pontos"></h1>
+        </div>
+    </footer>
+    <main id="cenario">
+        
+        <div id="circuloMaximo">
+            <div id="circuloPrincipal">
+                <div id="circuloMinimo"></div>
+            </div>
+        </div>   
+    </main>
+    
+</body>
+</html>

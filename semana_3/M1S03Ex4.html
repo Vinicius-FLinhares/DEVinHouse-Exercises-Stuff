@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculadora desconto</title>
+</head>
+<body>
+    <input type="text" placeholder="valor total" class="total">
+    <input type="text" placeholder="percentual de desconto" class="descontopercent">
+    <input type="submit" value="Enviar" class="envio">
+    <p class="finalvalue">= </p>
+</body>
+<script>
+const total = document.querySelector(".total");
+const descontopercent = document.querySelector(".descontopercent");
+const envio = document.querySelector(".envio");
+const finalvalue = document.querySelector(".finalvalue");
+
+function desconta(){
+    let valorTotal = parseFloat(total.value);
+    let desconto = parseFloat(descontopercent.value) / 100
+    let resultado = valorTotal*(1 - desconto)
+    finalvalue.innerHTML = '= ' + resultado;
+
+}
+
+envio.addEventListener('click',desconta);
+
+document.querySelector(".envio")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("salvar").click();
+    }
+});
+
+</script>
+</html>
